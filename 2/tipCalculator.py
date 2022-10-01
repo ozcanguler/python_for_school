@@ -1,0 +1,7 @@
+print("Welcome to the tip calculator.")
+bill=float(input("What was the total bill? $"))
+per=float(input("What percentage tip would you like to give? 10, 12, or 15?"))
+peo=float(input("How many people to split the bill?"))
+eac=float((bill*per/100+bill)/peo)
+eac="{:.2f}".format(eac)
+print(f"Each person should pay: ${eac}")
