@@ -21,6 +21,15 @@ def random_walk():
         don_ninja_turtle.right(r.choice(num))
         don_ninja_turtle.pencolor(random_color())
         i+=1
-random_walk()
+def spirograph_walk(size):
+    don_ninja_turtle.speed(0)
+    for i in range(int(360/size)): 
+        don_ninja_turtle.color(random_color())
+        don_ninja_turtle.circle(100)
+        don_ninja_turtle.setheading(don_ninja_turtle.heading()+size)
+
+#random_walk()
+
+spirograph_walk(10)
 screen.exitonclick()
 
