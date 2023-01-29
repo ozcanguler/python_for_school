@@ -9,7 +9,15 @@ class Hero(Turtle):
         self.shape("turtle")
         self.penup()
         self.setheading(90)
-        self.goto(starting_position)
+        self.go_to_start_position()
         
     def go_up(self): 
         self.forward(move_distance)
+
+    def go_to_start_position(self):
+        self.goto(starting_position)
+    def finish_line(self):
+        if self.ycor()>finish_ycor:
+            return True
+        else:
+            return False

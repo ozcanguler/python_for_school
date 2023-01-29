@@ -8,6 +8,7 @@ move_increment=10
 class Cars:
     def __init__(self): 
         self.all_cars=[]
+        self.car_speed=starting_move_distance
 
     def create_car(self):
         create_car_chance=random.randint(1,6)
@@ -20,8 +21,10 @@ class Cars:
             self.all_cars.append(new_car)
     def go_left(self):
         for car in self.all_cars:
-            car.backward(starting_move_distance)
-             
+            car.backward(self.car_speed)
+
+    def level_up(self):
+        self.car_speed+=move_increment       
 
     '''class Cars(Turtle):
         def __init__(self): 
