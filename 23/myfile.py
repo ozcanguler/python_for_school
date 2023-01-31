@@ -12,11 +12,11 @@ print(fileread.closed)
 fileread.close()
 print(fileread.closed)
 
-with open("C:/Users/Garavel/Desktop/pythonsil/ORWFiles/hello.txt",mode="w") as filewrite:
+with open("/Users/Garavel/Desktop/pythonsil/ORWFiles/hello.txt",mode="w") as filewrite:
     filewrite.write("Who wants to play a game?") 
 
-with open("C:/Users/Garavel/Desktop/pythonsil/ORWFiles/hello.txt",mode="a") as fileappend:
+with open("/Users/Garavel/Desktop/pythonsil/ORWFiles/hello.txt",mode="a") as fileappend:
     fileappend.write("\nIt's time to play hide and seek!") 
 
-with open("C:/Users/Garavel/Desktop/pythonsil/ORWFiles/newfile.txt",mode="w") as fileappend:
+with open("/Users/Garavel/Desktop/pythonsil/ORWFiles/newfile.txt",mode="w") as fileappend:
     fileappend.write("Welcome to the my world |o-o|")
