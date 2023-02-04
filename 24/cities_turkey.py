@@ -1,6 +1,7 @@
 import turtle
 import pandas
 
+matching_city=[]
 screen=turtle.Screen()
 screen.setup(1200, 800)
 screen.title("Cities of Turkey")
@@ -14,14 +15,25 @@ cities=datapanda.city.to_list()
 def get_mouse_click_coor(x, y):
         print(x, y)
 
-for i in range(81):        
-        data_dict=datapanda.to_dict()
-        state_data= datapanda[datapanda.city==cities[i]]
+while len(matching_city)<81:
+    answer_city=screen.textinput(title=f"{len(matching_city)}/81 Cities Correct", prompt="What's another city name?").title() #title first letter capitalized
+    if answer_city=="Exit":
+        missing_cities=[]
+        for city in cities:
+                if city not in matching_city:
+                        missing_cities.append(city)
+        new_data=pandas.DataFrame(missing_cities)
+        new_data.to_csv("cities_to_learn.csv")
+        exit()
+    if answer_city in cities:
+        matching_city.append(answer_city)
         t=turtle.Turtle()
         t.hideturtle()
-        t.penup()     
+        t.penup()
+        state_data= datapanda[datapanda.city==answer_city]
         t.goto(int(state_data.x),int(state_data.y))
-        t.write(cities[i])
+        t.write(answer_city)
+
 
 turtle.onscreenclick(get_mouse_click_coor)
 turtle.mainloop()
